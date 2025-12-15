@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="tracking.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Personal Expense Tracker</h1>
+
+        <div class="card">
+            <div class="type-buttons">
+                <button class="type-btn income" id="incomeBtn" onclick="selectType('income')">
+                    Income
+                </button>
+                <button class="type-btn inactive" id="expenseBtn" onclick="selectType('expense')">
+                    Expense
+                </button>
+            </div>
+
+            <div class="input-group">
+                <label>Category</label>
+                <input type="text" id="categoryInput" placeholder="e.g., Food, Salary, Transport...">
+            </div>
+
+            <div class="input-group">
+                <label>Amount</label>
+                <input type="number" id="amountInput" placeholder="0.00" step="0.01">
+            </div>
+
+            <div class="input-group">
+                <label>Remark / Note</label>
+                <input type="text" id="remarkInput" placeholder="Enter description...">
+            </div>
+
+            <button class="add-btn" onclick="addEntry()">Add Entry</button>
+        </div>
+
+        <div class="current">
+            <div class="current-box income">
+                <div class="current-label">Total Income</div>
+                <div class="current-value" id="totalIncome">$0.00</div>
+            </div>
+            <div class="current-box expense">
+                <div class="current-label">Total Expense</div>
+                <div class="current-value" id="totalExpense">$0.00</div>
+            </div>
+            <div class="current-box balance">
+                <div class="current-label">Balance</div>
+                <div class="current-value" id="balance">$0.00</div>
+            </div>
+        </div>
+
+        
+        <div class="card">
+            <div class="chart-title">Income and Expense</div>
+            <div class="chart-bars">
+                <div class="chart-bar-row">
+                    <div class="chart-label">Income</div>
+                    <div class="chart-bar-container">
+                        <div class="chart-bar income" id="incomeBar" style="width: 0%">
+                            <span id="incomeBarText"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="chart-bar-row">
+                    <div class="chart-label">Expense</div>
+                    <div class="chart-bar-container">
+                        <div class="chart-bar expense" id="expenseBar" style="width: 0%">
+                            <span id="expenseBarText"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        
+        <div class="card">
+            <div class="history-header">
+                <h2>History Log</h2>
+                <span class="entry-count" id="entryCount">0 entries</span>
+            </div>
+
+            <div class="filter-section">
+                <div class="filter-buttons" id="filterButtons"></div>
+            </div>
+
+            <div class="history-list" id="historyList">
+                <div class="empty-state">No entries yet. Please add your transaction! first</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
